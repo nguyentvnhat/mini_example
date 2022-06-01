@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/product/index",
+    "pages/service/index",
+    "pages/procedure/index",
+    "pages/product-detail/index",
+    "pages/service-detail/index"
+  ],
+  "window": {
+    "defaultTitle": "",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "borderTopActiveColor": "#1A94FF",
+    "selectedColor": "#1A94FF",
+    "borderTopColor": "#EBEBF0",
+    "items": [
+      {
+        "name": "Dịch vụ",
+        "pagePath": "pages/service/index"
+      },
+      {
+        "name": "Sản phẩm",
+        "pagePath": "pages/product/index"
+      },
+      {
+        "name": "Quy trình",
+        "pagePath": "pages/procedure/index"
+      }
+    ]
+  }
+}
