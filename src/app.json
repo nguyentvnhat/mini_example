@@ -2,30 +2,36 @@
   "pages": [
     "pages/product/index",
     "pages/service/index",
-    "pages/procedure/index",
     "pages/product-detail/index",
-    "pages/service-detail/index"
+    "pages/service-detail/index",
+    "pages/process/index"
   ],
   "window": {
     "defaultTitle": "",
     "backgroundColor": "#fff"
   },
   "tabBar": {
-    "borderTopActiveColor": "#1A94FF",
-    "selectedColor": "#1A94FF",
+    "borderTopActiveColor": "#0B74E5",
+    "selectedColor": "#0B74E5",
     "borderTopColor": "#EBEBF0",
     "items": [
       {
         "name": "Dịch vụ",
-        "pagePath": "pages/service/index"
+        "pagePath": "pages/service/index",
+        "icon": "/assets/icons/tab-service.png",
+        "activeIcon": "assets/icons/tab-service-active.png"
       },
       {
         "name": "Sản phẩm",
-        "pagePath": "pages/product/index"
+        "pagePath": "pages/product/index",
+        "icon": "/assets/icons/tab-product.png",
+        "activeIcon": "assets/icons/tab-product-active.png"
       },
       {
         "name": "Quy trình",
-        "pagePath": "pages/procedure/index"
+        "pagePath": "pages/process/index",
+        "icon": "/assets/icons/tab-process.png",
+        "activeIcon": "assets/icons/tab-process-active.png"
       }
     ]
   }
