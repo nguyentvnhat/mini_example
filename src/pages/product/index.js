@@ -2,7 +2,7 @@ import dummyData from './dummyData';
 
 Page({
   data:{
-    isLoading:true,
+    isLoading:false,
     skeletons: 6,
     products:{
       data: [],
@@ -19,13 +19,14 @@ Page({
         ...this.data.products,
         data:products
       },
-      isLoading:false,
+      // isLoading:false,
     });
   },
 	onReady() {
-    this.setData({isLoading:true});
-    setTimeout(()=>{
-      this.loadData();
-    },5000);
+    this.loadData();
+    // this.setData({isLoading:true});
+    // setTimeout(()=>{
+    //   this.loadData();
+    // },5000);
 	},
 });

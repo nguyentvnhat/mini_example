@@ -16,9 +16,11 @@
       <text class="mb-4x-small" number-of-lines="{{2}}">
         {{product.name}}
       </text>
-      <text class="price mr-2x-small" number-of-lines="{{1}}">
-        {{numberFormatter(product.price, ' ₫')}}
-      </text>
+      <view>
+        <text class="price mr-2x-small" number-of-lines="{{1}}">
+          {{numberFormatter(product.price, ' ₫')}}
+        </text>
+      </view>
     </view>
   </template>
   <template

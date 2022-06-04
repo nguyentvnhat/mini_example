@@ -1,6 +1,6 @@
 {
   "name": "uway-gaspa",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "tiki": {
     "appIdentifier": "vn.uway.miniapp.gaspa",
     "buildNumber": 1
