@@ -1,0 +1,28 @@
+<import-sjs from="../../utils/common.sjs" name="{numberFormatter}"></import-sjs>
+
+<view class="card {{className}}">
+  <template name="product-loading">
+    <view>
+      <view class="skeleton card-image" />
+      <view class="card-body">
+        <view class="skeleton skeleton-font-medium skeleton-100-width mb-4x-small"/>
+        <view class="skeleton skeleton-font-medium skeleton-70-width"/>
+      </view>
+    </view>
+  </template>
+  <template name="product-completed">
+    <image src="{{product.image}}" class="card-image" />
+    <view class="card-body">
+      <text class="mb-4x-small" number-of-lines="{{2}}">
+        {{product.name}}
+      </text>
+      <text class="price mr-2x-small" number-of-lines="{{1}}">
+        {{numberFormatter(product.price, ' ₫')}}
+      </text>
+    </view>
+  </template>
+  <template
+    is="product-{{isLoading ? 'loading' : 'completed'}}"
+    data="{{product}}"
+  />
+</view>

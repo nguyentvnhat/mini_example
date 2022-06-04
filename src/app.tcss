@@ -1,3 +1,13 @@
+@import '@tiki.vn/tini-style/es/index.tcss';
+@import './styles/skeleton.tcss'; 
+@import './styles/grid-system.tcss';
+
 .page {
-  background-color: #f7f7f7;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
+
+.container{
+  padding-left: 16px;
+  padding-right: 16px;
+} 

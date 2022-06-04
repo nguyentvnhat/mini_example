@@ -1,3 +1,10 @@
-<view>
-  Sản phầm page
+<view class="page container">
+  <view class="row">
+    <block tiki:if="{{isLoading}}">
+      <product isLoading className="col-6" tiki:for="{{skeletons}}"  />
+    </block>
+    <block tiki:else tiki:for="{{products.data}}" tiki:key="id">
+      <product className="col-6" product="{{item}}" />
+    </block>
+  </view>
 </view>
