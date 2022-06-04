@@ -16,16 +16,16 @@
     "borderTopColor": "#EBEBF0",
     "items": [
       {
-        "name": "Sản phẩm",
-        "pagePath": "pages/product/index",
-        "icon": "/assets/icons/tab-product.png",
-        "activeIcon": "assets/icons/tab-product-active.png"
-      },
-      {
         "name": "Dịch vụ",
         "pagePath": "pages/service/index",
         "icon": "/assets/icons/tab-service.png",
         "activeIcon": "assets/icons/tab-service-active.png"
+      },
+      {
+        "name": "Sản phẩm",
+        "pagePath": "pages/product/index",
+        "icon": "/assets/icons/tab-product.png",
+        "activeIcon": "assets/icons/tab-product-active.png"
       },
       {
         "name": "Quy trình",

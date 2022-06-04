@@ -1,0 +1,6 @@
+<view>
+    <text>
+        {{name}}
+    </text>
+    service detail
+</view>

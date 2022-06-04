@@ -1,3 +1,8 @@
-<view>
-  Dịch vụ page
+<view class="page container">
+	<block tiki:if="{{isLoading}}">
+		<service isLoading className="service-item" tiki:for="{{skeletons}}" />
+	</block>
+	<block tiki:else tiki:for="{{services.data}}" tiki:key="id">
+		<service className="service-item" service="{{item}}" onTap="onTabService" />
+	</block>
 </view>
