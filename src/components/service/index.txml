@@ -1,0 +1,19 @@
+<view class="card {{className}}">
+  <template name="service-loading">
+    <view class="skeleton card-image" />
+    <view class="card-body">
+      <view class="skeleton skeleton-font-medium skeleton-70-width text-name"></view>
+    </view>
+  </template>
+  <template name="service-completed">
+    <view catchTap="_onTapService" >
+      <image src="{{service.image}}" class="card-image" />
+      <view class="card-body">
+        <text class="text-name">
+          {{service.name}}
+        </text>
+      </view>
+    </view>
+  </template>
+  <template is="service-{{isLoading?'loading':'completed'}}" data="{{service}}" />
+</view>

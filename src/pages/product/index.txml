@@ -1,3 +1,18 @@
-<view>
-  Sản phầm page
+<view class="page container">
+  <search-input onDebounce="onSearch" className="search_input" />
+  <block tiki:if="{{isLoading}}">
+    <view class="row">
+      <product isLoading className="col-6" tiki:for="{{skeletons}}" />
+    </view>
+  </block>
+  <block tiki:else>
+    <block tiki:if="{{products.data.length > 0}}">
+      <view class="row">
+        <product tiki:for="{{products.data}}" tiki:key="id" className="col-6" product="{{item}}" onTap="onTapProduct" />
+      </view>
+    </block>
+    <block tiki:else>
+      <text class="w-full text-center text-not-found">Không có sản phẩm nào.</text>
+    </block>
+  </block>
 </view>
