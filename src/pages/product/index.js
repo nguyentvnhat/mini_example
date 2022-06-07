@@ -1,31 +1,61 @@
-import dummyData from './dummyData';
+import { productApis } from "../../services/apis";
+import {navigate} from '../../utils/navigate';
 
 Page({
-  data:{
-    isLoading:false,
+  data: {
+    isLoading: false,
     skeletons: 6,
-    products:{
+    products: {
       data: [],
+      defaultData: [],
       paging: {
         current_page: 0,
         last_page: 0,
       },
-    }
+    },
   },
-  async loadData(){
-    const {products} = dummyData;
+  async loadData() {
+    this.setData({ isLoading: true });
+    const resProducts = await productApis.getProductsArchives();
     this.setData({
-      products:{
+      products: {
         ...this.data.products,
-        data:products
+        data: resProducts,
+        defaultData: resProducts,
       },
-      isLoading:false,
+      isLoading: false,
     });
   },
-	onReady() {
-    this.setData({isLoading:true});
-    setTimeout(()=>{
-      this.loadData();
-    },5000);
-	},
+  onReady() {
+    this.loadData();
+  },
+  async onSearch(textSearch) {
+    this.setData({ isLoading: true });
+    if (textSearch) {
+      const data = await productApis.getSearchProducts(textSearch);
+      this.setData({
+        products: {
+          ...this.data.products,
+          data,
+        },
+        isLoading: false,
+      });
+    } else {
+      this.setData({
+        products: {
+          ...this.data.products,
+          data:this.data.products.defaultData,
+        },
+        isLoading: false,
+      });
+    }
+  },
+  onTapProduct(productId){
+    navigate({
+      page: 'product-detail',
+      params: {
+        id:productId,
+      },
+    });
+  }
 });

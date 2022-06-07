@@ -3,10 +3,18 @@ Component({
     isLoading:false,
     className: "",
     product: {
-      image: "",
+      description: "",
+      feature_image: "",
+      id: null,
       name: "",
-      id: "",
       price: 0,
+      variations: [],
     },
   },
+  methods:{
+    _onTapProduct(){
+      const {id} = this.props.product;
+      this.props.onTap(id);
+    }
+  }
 });

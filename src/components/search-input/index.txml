@@ -1,0 +1,2 @@
+<search-bar class="{{className}}" value="{{value}}" placeholder="Tên sản phẩm" onInput="onInput"
+    onTapCloseIcon="handleClearInput" onTapSearchIcon={onInput} />
