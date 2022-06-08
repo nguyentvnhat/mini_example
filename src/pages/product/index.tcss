@@ -1,3 +1,9 @@
 .search_input{
     margin-bottom: 16px
 }
+.actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}

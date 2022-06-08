@@ -1,6 +1,6 @@
 import { productApis } from "../../services/apis";
 import {navigate} from '../../utils/navigate';
-
+import { defaultSorts } from '../../utils/constant';
 Page({
   data: {
     isLoading: false,
@@ -13,6 +13,8 @@ Page({
         last_page: 0,
       },
     },
+    sorts: defaultSorts,
+    selectedSort: '',
   },
   async loadData() {
     this.setData({ isLoading: true });
@@ -57,5 +59,10 @@ Page({
         id:productId,
       },
     });
-  }
+  },
+  onSelectSort(selectedSort) {
+    this.setData({
+      selectedSort,
+    });
+  },
 });
