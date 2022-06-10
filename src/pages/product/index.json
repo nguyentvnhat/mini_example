@@ -2,6 +2,7 @@
   "defaultTitle": "Danh sách sản phẩm",
   "usingComponents": {
     "product": "components/product/index",
-    "search-input": "components/search-input/index"
+    "search-input": "components/search-input/index",
+    "sort": "components/sort/index"
   }
 }

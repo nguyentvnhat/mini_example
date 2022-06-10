@@ -1,1 +1,8 @@
-{}
+{
+  "defaultTitle": "Chi tiết sản phẩm",
+  "usingComponents": {
+    "product": "components/product/index",
+		"carousel-product":"components/carousel/index",
+		"collapse":"components/collapse/index"
+  }
+}

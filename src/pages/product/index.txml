@@ -1,5 +1,12 @@
-<view class="page container">
+<view class="page product-page container">
   <search-input onDebounce="onSearch" className="search_input" />
+  <view class="actions">
+    <sort
+      sorts="{{sorts}}"
+      selectedSort="{{selectedSort}}"
+      onSelect="onSelectSort"
+    />
+  </view>
   <block tiki:if="{{isLoading}}">
     <view class="row">
       <product isLoading className="col-6" tiki:for="{{skeletons}}" />

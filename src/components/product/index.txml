@@ -1,8 +1,6 @@
 <import-sjs from="../../utils/common.sjs" name="{numberFormatter}"></import-sjs>
-
-<view class="card {{className}}">
   <template name="product-loading">
-    <view>
+    <view class="card {{className}}">
       <view class="skeleton card-image" />
       <view class="card-body">
         <view class="skeleton skeleton-font-medium skeleton-100-width mb-4x-small" />
@@ -11,7 +9,7 @@
     </view>
   </template>
   <template name="product-completed">
-    <view catchTap="_onTapProduct">
+    <view class="card {{className}}" catchTap="_onTapProduct">
       <image src="{{product.feature_image}}" class="card-image" />
       <view class="card-body">
         <text class="mb-4x-small" number-of-lines="{{2}}">
@@ -25,5 +23,4 @@
       </view>
     </view>
   </template>
-  <template is="product-{{isLoading ? 'loading' : 'completed'}}" data="{{product}}" />
-</view>
+  <template is="product-{{isLoading ? 'loading' : 'completed'}}" data="{{product,className}}" />
