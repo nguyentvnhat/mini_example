@@ -1,4 +1,4 @@
-<view class="page container">
+<view class="page service-page container">
 	<block tiki:if="{{isLoading}}">
 		<service isLoading className="service-item" tiki:for="{{skeletons}}" />
 	</block>

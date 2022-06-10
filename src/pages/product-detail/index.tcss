@@ -1,0 +1,28 @@
+.group-name {
+    padding-top: 8px;
+    padding-bottom: 16px;
+}
+
+.wrap-description {
+    position: relative;
+}
+.description-loading{
+    height: 30vw;
+    width: 100%;
+}
+.icon{
+    width: 16px;
+    height: 16px;
+}
+.wrap-button-collapse {
+    background-color: rgba(255, 255,255,0.1);
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-collapse{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

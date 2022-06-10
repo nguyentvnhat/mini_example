@@ -1,0 +1,14 @@
+<view class="container">
+    <view class="description {{isCollapsedDesc?'collapsed':''}}">
+        <slot>
+        </slot>
+    </view>
+</view>
+<view class="wrap-button-collapse">
+    <button class="button-collapse" type="ghost" size="small" onTap="onToggleDesc">
+        {{isCollapsedDesc?'rút gọn':'xem thêm'}}
+        <image src="{{isCollapsedDesc?'/assets/icons/arow-up-blue.svg':'/assets/icons/arrow-down-blue.svg'}}"
+            class="icon" />
+    </button>
+
+</view>

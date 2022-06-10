@@ -2,18 +2,18 @@
 export const defaultSorts = [
   {
     label: 'Phổ biến',
-    value: 'default',
+    value: 'popularity',
   },
   {
     label: 'Bán chạy',
-    value: 'top_seller',
+    value: 'total_sales',
   },
   {
     label: 'Giá: thấp đến cao',
-    value: 'price_asc',
+    value: 'price/desc',
   },
   {
     label: 'Giá: cao đến thấp',
-    value: 'price_desc',
+    value: 'price/asc',
   },
 ];

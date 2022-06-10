@@ -1,3 +1,6 @@
+.product-page{
+    background-color: #fff;
+}
 .search_input{
     margin-bottom: 16px
 }

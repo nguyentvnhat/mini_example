@@ -1,0 +1,7 @@
+.description {
+    overflow-y: hidden;
+    height: 60vw;
+}
+.description.collapsed{
+    height: auto;
+}
