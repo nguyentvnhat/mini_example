@@ -1,0 +1,3 @@
+<view class="rich-text-wrap">
+    <rich-text nodes="{{htmlNodes}}" class="{{className}}" />
+</view>

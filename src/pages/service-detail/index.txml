@@ -1,6 +1,9 @@
-<view>
-    <text>
-        {{name}}
-    </text>
-    service detail
+<view class="page service-detail mt-0">
+	<view class="service-detail-body">
+		<carousel-service isLoading="{{isLoading}}" list="{{service.images}}" />
+		<view class="boxViewItem">
+			<html-content isLoading="{{isLoading}}" content="{{service.content}}" />
+		</view>
+	</view>
+	<consultant-form className="consultant-form" />
 </view>

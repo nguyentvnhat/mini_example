@@ -1,0 +1,16 @@
+
+.service-detail{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-bottom: 0;
+}
+.service-detail-body{
+    flex: 1;
+    flex-shrink: 0;
+}
+.consultant-form{
+    position: sticky;
+    bottom: 0;
+}

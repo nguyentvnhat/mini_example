@@ -1,0 +1,4 @@
+.rich-text-wrap .size-full{
+    width: 100%;
+    height:100vw;
+}

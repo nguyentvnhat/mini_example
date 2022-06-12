@@ -1,44 +1,4 @@
 @import '@tiki.vn/tini-style/es/index.tcss';
 @import './styles/skeleton.tcss'; 
 @import './styles/grid-system.tcss';
- 
-.page {
-  margin-top: 16px;
-  margin-bottom: 16px;
-  background-color: #F8F8F9;
-  /* background-color: red; */
-  display: flex;
-  flex-direction: column;
-}
-.page.mt-0{
-  margin-top: 0;
-}
-
-.container{
-  padding-left: 16px;
-  padding-right: 16px;
-}
-.boxViewItem {
-  background-color: #fff;
-  /* background-color: blue; */
-  padding-top: 16px;
-  padding-bottom: 16px;
-  margin-bottom: 8px;
-}
-.pt-0{
-  padding-top: 0;
-}
-.pb-0{
-  padding-bottom: 0;
-}
-.py-0{
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.text-price{
-  font-weight: 700;
-  line-height: 21px;
-  font-size: var(--font-size-large);
-  line-height: calc(var(--font-height-default,1.5) * var(--font-size-large))
-}
+@import './styles/index.tcss';

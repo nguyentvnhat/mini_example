@@ -2,7 +2,13 @@
 	position: relative;
 }
 .carousel-item{
+	height: 50vw;
+}
+.carousel-item.large{
 	height: 100vw;
+}
+.carousel-item.medium{
+	height: 60vw;
 }
 .indicator-number{
 	position: absolute;

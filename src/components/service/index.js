@@ -6,6 +6,7 @@ Component({
       id: "",
       image: "",
       name: "",
+      desc:"",
     },
   },
 	methods:{

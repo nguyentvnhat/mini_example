@@ -1,0 +1,115 @@
+.page {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: #F8F8F9;
+  display: flex;
+  flex-direction: column;
+}
+
+.page.mt-0 {
+  margin-top: 0;
+}
+
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.boxViewItem {
+  background-color: #fff;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 8px;
+}
+
+
+/* spacing */
+.pt-0 {
+  padding-top: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.px-0{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mr-1 {
+  margin-right: 8px;
+}
+
+/* text */
+
+text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #28282B;
+}
+
+.text-price {
+  font-weight: 700;
+  line-height: 21px;
+  font-size: var(--font-size-large);
+  line-height: calc(var(--font-height-default, 1.5) * var(--font-size-large))
+}
+
+.text-medium {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+
+/* form */
+.form-group,
+.form-controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group>button {
+  width: 100%;
+}
+
+.form-label {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: #28282B;
+  margin-bottom: 4px;
+}
+
+.form-controls,
+.form-controls>input,
+.form-controls>.form-control {
+  width: 100%;
+}
+
+.form-controls>input,
+.form-controls>.form-control {
+  margin-bottom: 8px;
+}
+
+.form-controls>.form-control.checkbox {
+  margin-bottom: 20px;
+}
+.form-control.button{
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* flex */
+.flex-box-center {
+  display: flex;
+  align-items: center;
+}

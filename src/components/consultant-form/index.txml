@@ -1,0 +1,51 @@
+<view class="container consultant-form {{className}}">
+	<view onTap="handleCollapsed" class="flex-box-center justify-between tab-panel {{isCollapsed?'collapsed':''}}">
+		<view class="flex-box-center">
+			<view class="box-ico solid" style="margin-right: 12px;">
+				<icon type="support" size="16" color="#0B74E5" />
+			</view>
+			<text class="title">Form đăng ký</text>
+		</view>
+		<view class="box-ico px-0">
+			<icon type="arrow_{{isCollapsed?'up':'down'}}" color="#808080" />
+		</view>
+	</view>
+
+	<form onSubmit="onSubmit" class="form-submit {{isCollapsed?'collapsed':''}}">
+		<view class="form-group">
+			<text class="form-label">Họ và tên</text>
+			<view class="form-controls">
+				<input class="form-control" placeholder="Nhập họ tên" name="full_name" />
+			</view>
+
+		</view>
+
+		<view class="form-group">
+			<text class="form-label">Số điện thoại</text>
+			<view class="form-controls">
+				<input class="form-control" placeholder="Nhập vào số điện thoại" name="phone_number" />
+			</view>
+		</view>
+
+		<view class="form-group">
+			<text class="form-label">Dịch vụ cần tư vấn</text>
+			<checkbox-group class="form-controls" name="service_name">
+				<view class="flex-box-center form-control checkbox">
+					<checkbox class="mr-1" value="check1" />
+					<text>Điều trị mụn</text>
+				</view>
+				<view class="flex-box-center form-control checkbox">
+					<checkbox class="mr-1" value="check2" />
+					<text>Điều trị thâm</text>
+				</view>
+				<view class="flex-box-center form-control checkbox">
+					<checkbox class="mr-1" value="check3" />
+					<text>Điều trị sẹo rỗ</text>
+				</view>
+			</checkbox-group>
+		</view>
+		<view class="form-group">
+			<button form-type="submit" type="solid" size="large" class="form-control button text-medium">Nhận tư vấn</button>
+		</view>
+	</form>
+</view>
