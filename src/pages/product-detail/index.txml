@@ -26,7 +26,12 @@
       </collapse>
     </block>
     <block tiki:else>
-      <view class="skeleton description-loading" ></view>
+      <view class="skeleton description-loading"></view>
     </block>
+  </view>
+  <view tiki:if="{{listSimilar.length > 0}}" class="boxViewItem">
+    <view class="row">
+      <product tiki:for="{{listSimilar}}" tiki:key="id" className="col-6" product="{{item}}" onTap="onTapProduct" />
+    </view>
   </view>
 </view>

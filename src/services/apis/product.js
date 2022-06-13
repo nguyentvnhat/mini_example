@@ -43,3 +43,10 @@ export const getProductDetail = async (product_id) => {
   });
   return res;
 };
+
+export const getListSimilarWithProductId = async (product_id) => {
+  const res = await request({
+    path: "/get-products-similar/" + product_id,
+  });
+  return res;
+};
