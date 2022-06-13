@@ -3,8 +3,11 @@ export const getProductsArchives = async ({
   search = null,
   order = null,
   orderby = null,
+  page = 1,
 }) => {
-  const params = {};
+  const params = {
+    page,
+  };
   if (search) {
     params["search"] = search;
   }
