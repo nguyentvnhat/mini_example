@@ -1,3 +1,7 @@
 {
-  "defaultTitle": "Quy trình"
+  "defaultTitle": "Quy trình",
+  "usingComponents": {
+		"collapse":"components/collapse/index",
+    "step":"components/step/index"
+  }
 }
