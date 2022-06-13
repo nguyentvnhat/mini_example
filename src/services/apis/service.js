@@ -1,4 +1,14 @@
 import request from "../index";
+import dummyData from "../../pages/service/dummyData";
+export const getServiceArchives = () => {
+  // const res = await request({
+  //   path: "/get-service-archives",
+  // });
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(dummyData), 1000);
+  });
+};
+
 export const postConsultantForm = async ({
   full_name,
   phone_number,
