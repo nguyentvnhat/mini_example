@@ -1,5 +1,4 @@
 import request from "../index";
-// https://gaspa.vn/wp-json/wp/v2/get-products-archives?page=1&search=Eucerin - Kem Trị Dị Ứng Dưỡng&order=desc&orderby=popularity
 export const getProductsArchives = async ({
   search = null,
   order = null,

@@ -1,3 +1,3 @@
 import * as productApis from './product';
-
-export {productApis};
+import * as serviceApis from './service';
+export {productApis, serviceApis};

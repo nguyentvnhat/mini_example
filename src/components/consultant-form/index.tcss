@@ -1,0 +1,38 @@
+.consultant-form{
+	background-color: #fff;
+}
+.tab-panel{
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.tab-panel .box-ico {
+	border-radius: 100%;
+	padding: 6px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.tab-panel .box-ico.solid{
+	background: rgba(11, 116, 229, 0.16);
+}
+.tab-panel .box-ico.px-0{
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.tab-panel .title {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 150%;
+	color: #0B74E5;
+}
+.form-submit{
+	height: 0;
+	display: none;
+}
+.form-submit.collapsed{
+	height: auto;
+	display: block;
+}

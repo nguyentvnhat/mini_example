@@ -2,6 +2,7 @@ Component({
   props: {
     isLoading: false,
     list: [],
+    size:'',
   },
   data: {
     current: 0,

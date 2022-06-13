@@ -1,7 +1,7 @@
 <import-sjs from="../../utils/common.sjs" name="{numberFormatter}"></import-sjs>
-<view class="page column mt-0">
+<view class="page column c">
   <view class="boxViewItem py-0">
-    <carousel-product isLoading="{{isLoading}}" list="{{product.images}}" />
+    <carousel-product size="large" isLoading="{{isLoading}}" list="{{product.images}}" />
     <block tiki:if="{{isLoading}}">
       <view class="container group-name">
         <view class="skeleton skeleton-font-medium skeleton-70-width mb-4x-small" />
@@ -28,22 +28,5 @@
     <block tiki:else>
       <view class="skeleton description-loading" ></view>
     </block>
-
-    <!-- <view class="container description" animation="{{animation}}" >
-      <rich-text nodes="{{htmlNodes}}" />
-    </view>
-    <view class="wrap-button-collapse">
-      <button class="button-collapse" type="ghost" size="small" onTap="onToggleDesc">
-        {{isCollapsedDesc?'rút gọn':'xem thêm'}}
-        <image src="{{isCollapsedDesc?'/assets/icons/arow-up-blue.svg':'/assets/icons/arrow-down-blue.svg'}}" class="icon" />
-      </button>
-
-    </view> -->
   </view>
-  <!-- <view class="boxViewItem">
-    <text class="title">Sản phẩm tương tự</text>
-    <view class="row">
-      <product tiki:for="{{product.related_ids}}" isLoading tiki:key="index" className="col-6" />
-    </view>
-  </view> -->
 </view>

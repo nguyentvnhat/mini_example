@@ -9,8 +9,11 @@
     <view catchTap="_onTapService" >
       <image src="{{service.image}}" class="card-image" />
       <view class="card-body">
-        <text class="text-name">
+        <text number-of-lines="2" class="text-name">
           {{service.name}}
+        </text>
+        <text number-of-lines="2">
+          {{service.desc}}
         </text>
       </view>
     </view>
