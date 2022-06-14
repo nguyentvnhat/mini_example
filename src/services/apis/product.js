@@ -3,8 +3,11 @@ export const getProductsArchives = async ({
   search = null,
   order = null,
   orderby = null,
+  page = 1,
 }) => {
-  const params = {};
+  const params = {
+    page,
+  };
   if (search) {
     params["search"] = search;
   }
@@ -37,6 +40,13 @@ export const getProductDetail = async (product_id) => {
     params: {
       product_id,
     },
+  });
+  return res;
+};
+
+export const getListSimilarWithProductId = async (product_id) => {
+  const res = await request({
+    path: "/get-products-similar/" + product_id,
   });
   return res;
 };

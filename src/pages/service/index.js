@@ -1,5 +1,5 @@
-import dummyData from "./dummyData";
-import {navigate} from '../../utils/navigate';
+import { navigate } from "../../utils/navigate";
+import { serviceApis } from "../../services/apis";
 Page({
   data: {
     isLoading: true,
@@ -8,28 +8,41 @@ Page({
       data: [],
     },
   },
+  mappingServiceData(data){
+    if(!data) return [];
+    return data.map(service=>({
+      id: service.ID,
+      image: service.feature_image,
+      name: service.post_title,
+      desc:service.post_content,
+    }))
+  },
   async loadData() {
-    const { services } = dummyData;
-    this.setData({
-      services: {
-        data: services.data,
-      },
-      isLoading: false,
-    });
+    const res = await serviceApis.getServiceArchives();
+    if (res.success) {
+      this.setData({
+        services: {
+          data: this.mappingServiceData(res.data),
+        },
+        isLoading: false,
+      });
+    } else {
+      this.setData({
+        isLoading: false,
+      });
+    }
   },
   onReady() {
     this.setData({ isLoading: true });
-    setTimeout(() => {
-      this.loadData();
-    }, 5000);
+    this.loadData();
   },
-  onTabService(service){
+  onTabService(service) {
     navigate({
-      page: 'service-detail',
+      page: "service-detail",
       params: {
-        id:service.id,
-        name:service.name,
+        id: service.id,
+        name: service.name,
       },
     });
-  }
+  },
 });

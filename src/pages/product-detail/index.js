@@ -1,6 +1,7 @@
 import { productApis } from "../../services/apis";
 import parse from "@tiki.vn/mini-html-parser2";
 import { parseQuery } from "../../utils/navigate";
+import { navigate } from "../../utils/navigate";
 
 Page({
   data: {
@@ -12,17 +13,19 @@ Page({
       description: "",
       related_ids: [1233, 1231, 4545, 6653],
     },
+    listSimilar: [],
     htmlNodes: [],
     htmlNodesText: "",
     isCollapsedDesc: false,
   },
+
   async onLoad(query) {
     const { id } = parseQuery(query);
     this.setData({
       isLoading: true,
     });
-
     const product = await productApis.getProductDetail(id);
+    const listSimilar = await productApis.getListSimilarWithProductId(id);
     parse(product.description, (err, htmlNodes) => {
       if (!err) {
         this.setData({
@@ -31,36 +34,18 @@ Page({
         });
       }
     });
-    // this.animation.height(200).step();
     this.setData({
       product,
+      listSimilar,
       isLoading: false,
-      // animation: this.animation.export(),
     });
-    // if(!descViewPointHeight){
-    //   getHeightViewPointDesc('.description');
-    // }
   },
-  onReady() {
-    // this.animation = my.createAnimation();
+  onTapProduct(productId) {
+    navigate({
+      page: "product-detail",
+      params: {
+        id: productId,
+      },
+    });
   },
-  onShow(){
-    // this.getViewPointDesc();
-  },
-  // onToggleDesc() {
-  //   if(!descViewPointHeight){
-  //     getHeightViewPointDesc('.description');
-  //   }
-  //   const { isCollapsedDesc } = this.data;
-  //   const nextValue = !isCollapsedDesc;
-  //   if (nextValue) {
-  //     this.animation.height(descViewPointHeight ?descViewPointHeight: 'auto').step();
-  //   } else {
-  //     this.animation.height(200).step();
-  //   }
-  //   this.setData({
-  //     isCollapsedDesc: nextValue,
-  //     animation: this.animation.export(),
-  //   });
-  // },
 });

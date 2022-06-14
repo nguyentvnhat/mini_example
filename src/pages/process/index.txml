@@ -1,3 +1,6 @@
-<view>
-  Quy trình page
+<view class="page">
+  <image class="w-full carousel-item" mode="aspectFill" src="{{process.thumbnail_page}}" />
+  <view class="container steps">
+    <step className="step" tiki:for="{{process.steps}}" tiki:key="index" step="{{item}}" node="{{ index + 1}}"></step>
+  </view>
 </view>

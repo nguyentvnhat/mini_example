@@ -1,0 +1,10 @@
+<view class="box-step {{className}}">
+  <view class="node">
+    <text class="label-none" >00</text>
+    <text class="label">{{node}}</text>
+  </view>
+  <view>
+    <text class="box-text-title">{{step.step_desc_progress_tiniapp}}</text>
+    <text class="box-text-desc">{{step.step_desc_progress_tiniapp}}</text>
+  </view>
+</view>

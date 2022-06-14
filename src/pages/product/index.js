@@ -1,6 +1,9 @@
 import { productApis } from "../../services/apis";
 import { navigate } from "../../utils/navigate";
 import { defaultSorts } from "../../utils/constant";
+import debounce from "lodash/debounce";
+
+const ItemPerPage = 10;
 Page({
   data: {
     isLoading: false,
@@ -8,10 +11,7 @@ Page({
     products: {
       data: [],
       defaultData: [],
-      paging: {
-        current_page: 0,
-        last_page: 0,
-      },
+      page: 1,
     },
     textSearch: "",
     sorts: defaultSorts,
@@ -19,7 +19,11 @@ Page({
   },
   async loadData() {
     this.setData({ isLoading: true });
-    const resProducts = await productApis.getProductsArchives({});
+    const { products } = this.data;
+    const resProducts = await productApis.getProductsArchives({
+      page: products.page,
+    });
+    this.hasMore = resProducts.length >= ItemPerPage;
     this.setData({
       products: {
         ...this.data.products,
@@ -34,14 +38,17 @@ Page({
   },
   async onSearch(textSearch) {
     this.setData({ isLoading: true });
+    const { products } = this.data;
     if (textSearch) {
       const data = await productApis.getProductsArchives({
         search: textSearch,
+        page: 1,
       });
       this.setData({
         products: {
-          ...this.data.products,
+          ...products,
           data,
+          page: 1,
         },
         isLoading: false,
         textSearch,
@@ -49,8 +56,8 @@ Page({
     } else {
       this.setData({
         products: {
-          ...this.data.products,
-          data: this.data.products.defaultData,
+          ...products,
+          data: products.defaultData,
         },
         isLoading: false,
       });
@@ -65,11 +72,6 @@ Page({
     });
   },
   async onSelectSort(selectedSort) {
-    //     top selling => total_sales
-    // popular => popularity
-
-    // price => price
-    
     const sortValue = selectedSort.value;
     let orderby = sortValue;
     let order = "desc";
@@ -77,21 +79,52 @@ Page({
       order = sortValue.split("/")[1];
       orderby = "price";
     }
-    const { textSearch } = this.data;
-    console.log("selectedSort", textSearch,order,orderby);
-
+    const { textSearch, products } = this.data;
     const data = await productApis.getProductsArchives({
       search: textSearch,
       order,
       orderby,
+      page: 1,
     });
     this.setData({
       products: {
-        ...this.data.products,
+        ...products,
         data,
+        page: 1,
       },
       isLoading: false,
       selectedSort,
     });
+  },
+  loadMoreProducts: debounce(async function () {
+    const { textSearch, products, isLoading, selectedSort } = this.data;
+    if (!this.hasMore) return;
+    const nextPage = products.page + 1;
+    let orderby = selectedSort;
+    let order = "desc";
+    if (selectedSort.includes("price")) {
+      order = selectedSort.split("/")[1];
+      orderby = "price";
+    }
+    const data = await productApis.getProductsArchives({
+      search: textSearch,
+      order,
+      orderby,
+      page: nextPage,
+    });
+    this.hasMore = data.length >= ItemPerPage;
+
+    this.setData({
+      products: {
+        ...products,
+        data: [...products.data, ...data],
+        page: nextPage,
+      },
+    });
+  }, 500),
+
+  onPageScroll(event) {
+    const { scrollHeight, scrollTop } = event;
+    if (scrollTop >= scrollHeight * 0.55) this.loadMoreProducts();
   },
 });
