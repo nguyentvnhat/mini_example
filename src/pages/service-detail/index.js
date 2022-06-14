@@ -1,5 +1,6 @@
 import { parseQuery } from "../../utils/navigate";
 import dummyData from "./dummyData";
+import { serviceApis } from "../../services/apis";
 Page({
   data: {
     isLoading: false,
@@ -8,17 +9,31 @@ Page({
       content: "",
     },
   },
-  async loadData() {
+  async loadData(id) {
+    const [serviceData, images] = await serviceApis.getDetailService(id);
+    if (serviceData && images) {
+      this.setData({
+        service: {
+          content: serviceData.content.rendered?serviceData.content.rendered.replace(/<\/?[^>]+(>|$)/g,''):'',
+          images: images.map((i) => ({ src: i })),
+        },
+        isLoading: false,
+      });
+      return;
+    }
     this.setData({
-      service: dummyData.data,
       isLoading: false,
     });
+  },
+  saveRef(ref) {
+    this.form = ref;
   },
   onLoad(query) {
     this.setData({ isLoading: true });
     const { id } = parseQuery(query);
-    setTimeout(()=>{
-      this.loadData();
-    },2000);
+    this.loadData(id);
+  },
+  onTapOutSiteForm() {
+    this.form.close();
   },
 });

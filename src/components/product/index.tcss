@@ -11,6 +11,7 @@
   border-radius: 8px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+  background-color: rgba(190, 190, 190, 0.2);
 }
 
 .card .card-body {
@@ -32,6 +33,7 @@
 }
 
 .card .card-body text.price {
+  min-height: 21px;
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
