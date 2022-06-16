@@ -10,7 +10,6 @@ Component({
   },
   
   deriveDataFromProps(nextProps) {
-    console.log(this.props.content !== nextProps.content);
     if (this.props.content !== nextProps.content) this.parseHTMLFromProps(nextProps.content);
   },
   didMount(){

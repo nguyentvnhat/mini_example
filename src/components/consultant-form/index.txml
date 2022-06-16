@@ -11,11 +11,12 @@
 		</view>
 	</view>
 
-	<form onSubmit="onSubmit" class="form-submit {{isCollapsed?'collapsed':''}}">
+	<view  class="form-submit {{isCollapsed?'collapsed':''}}">
 		<view class="form-group">
 			<text class="form-label">Họ và tên</text>
 			<view class="form-controls">
-				<input class="form-control" placeholder="Nhập họ tên" name="full_name" />
+				<input class="form-control" placeholder="Nhập họ tên" name="full_name" onInput="onChangeName" />
+				<text class="text-error">{{errors['full_name']}}</text>
 			</view>
 
 		</view>
@@ -23,29 +24,31 @@
 		<view class="form-group">
 			<text class="form-label">Số điện thoại</text>
 			<view class="form-controls">
-				<input class="form-control" placeholder="Nhập vào số điện thoại" name="phone_number" />
+				<input type= class="form-control" placeholder="Nhập vào số điện thoại" name="phone_number" onInput="onChangePhoneNumber"  maxlength="12"/>
+				<text class="text-error">{{errors['phone_number']}}</text>
 			</view>
 		</view>
 
 		<view class="form-group">
 			<text class="form-label">Dịch vụ cần tư vấn</text>
-			<checkbox-group class="form-controls" name="service_name">
+			<checkbox-group class="form-controls" name="service_name" onChange="onChangeCheckBox">
 				<view class="flex-box-center form-control checkbox">
-					<checkbox class="mr-1" value="check1" />
+					<checkbox class="mr-1" value="Điều trị mụn" />
 					<text>Điều trị mụn</text>
 				</view>
 				<view class="flex-box-center form-control checkbox">
-					<checkbox class="mr-1" value="check2" />
+					<checkbox class="mr-1" value="Điều trị thâm" />
 					<text>Điều trị thâm</text>
 				</view>
-				<view class="flex-box-center form-control checkbox">
-					<checkbox class="mr-1" value="check3" />
+				<view class="flex-box-center form-control checkbox last">
+					<checkbox class="mr-1" value="Điều trị sẹo rỗ" />
 					<text>Điều trị sẹo rỗ</text>
 				</view>
+				<text class="text-error">{{errors['service_name']}}</text>
 			</checkbox-group>
 		</view>
 		<view class="form-group">
-			<button form-type="submit" type="solid" size="large" class="form-control button text-medium">Nhận tư vấn</button>
+			<button type="solid" size="large" class="form-control button text-medium" disabled="{{!isValid}}" onTap="_onSubmit" >Nhận tư vấn</button>
 		</view>
-	</form>
+	</view>
 </view>

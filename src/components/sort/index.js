@@ -2,12 +2,12 @@ Component({
   props: {
     className: '',
     sorts: [],
-    selectedSort: null,
     onSelect: () => {},
   },
 
   data: {
     isShow: false,
+    selected:null,
   },
 
   methods: {
@@ -22,7 +22,6 @@ Component({
 
     hideBottomSheet() {
       my.showTabBar();
-
       this.setData({
         isShow: false,
       });
@@ -30,8 +29,12 @@ Component({
 
     _onSelect(event) {
       const { item } = event.target.dataset;
+      this.setData({
+        selected:item,
+      });
       this.hideBottomSheet();
       this.props.onSelect(item);
+
     },
   },
 });

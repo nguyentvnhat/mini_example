@@ -1,5 +1,5 @@
 <import-sjs from="../../utils/common.sjs" name="{numberFormatter}"></import-sjs>
-<view class="page column c">
+<view class="page column mt-0">
   <view class="boxViewItem py-0">
     <carousel-product size="large" isLoading="{{isLoading}}" list="{{product.images}}" />
     <block tiki:if="{{isLoading}}">
@@ -29,7 +29,10 @@
       <view class="skeleton description-loading"></view>
     </block>
   </view>
-  <view tiki:if="{{listSimilar.length > 0}}" class="boxViewItem">
+  <view tiki:if="{{listSimilar.length > 0}}" class="boxViewItem container">
+    <view class=" related-product">
+      <text class="text-title">Sản phẩm tương tự</text>
+    </view>
     <view class="row">
       <product tiki:for="{{listSimilar}}" tiki:key="id" className="col-6" product="{{item}}" onTap="onTapProduct" />
     </view>

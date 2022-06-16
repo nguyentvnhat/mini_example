@@ -15,7 +15,10 @@ Page({
     },
     textSearch: "",
     sorts: defaultSorts,
-    selectedSort: "",
+    selectedSort:  {
+      label: '',
+      value: '',
+    },
   },
   async loadData() {
     this.setData({ isLoading: true });
@@ -100,10 +103,10 @@ Page({
     const { textSearch, products, isLoading, selectedSort } = this.data;
     if (!this.hasMore) return;
     const nextPage = products.page + 1;
-    let orderby = selectedSort;
+    let orderby = selectedSort.value;
     let order = "desc";
-    if (selectedSort.includes("price")) {
-      order = selectedSort.split("/")[1];
+    if (selectedSort.value.includes("price")) {
+      order = selectedSort.value.split("/")[1];
       orderby = "price";
     }
     const data = await productApis.getProductsArchives({

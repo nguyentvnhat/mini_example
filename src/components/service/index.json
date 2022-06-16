@@ -1,4 +1,7 @@
 {
   "component": true,
-  "componentLifeCycleV2": "YES"
+  "componentLifeCycleV2": "YES",
+  "usingComponents": {
+    "html-content":"components/html-content/index"
+  }
 }
