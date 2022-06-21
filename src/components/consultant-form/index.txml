@@ -32,17 +32,9 @@
 		<view class="form-group">
 			<text class="form-label">Dịch vụ cần tư vấn</text>
 			<checkbox-group class="form-controls" name="service_name" onChange="onChangeCheckBox">
-				<view class="flex-box-center form-control checkbox">
-					<checkbox class="mr-1" value="Điều trị mụn" />
-					<text>Điều trị mụn</text>
-				</view>
-				<view class="flex-box-center form-control checkbox">
-					<checkbox class="mr-1" value="Điều trị thâm" />
-					<text>Điều trị thâm</text>
-				</view>
-				<view class="flex-box-center form-control checkbox last">
-					<checkbox class="mr-1" value="Điều trị sẹo rỗ" />
-					<text>Điều trị sẹo rỗ</text>
+				<view class="flex-box-center form-control checkbox" tiki:for="{{serviceOptions}}" tiki:key="index">
+					<checkbox class="mr-1" value="{{item.step_name_progress_tiniapp}}" />
+					<text>{{item.step_desc_progress_tiniapp}}</text>
 				</view>
 				<text class="text-error">{{errors['service_name']}}</text>
 			</checkbox-group>

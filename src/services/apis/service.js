@@ -27,3 +27,10 @@ export const postConsultantForm = async (payload) => {
   });
   return res;
 };
+
+export const getConsultantOptions = async ()=>{
+  const res =await request({
+    path:'/get-consultant-options',
+  });
+  return res;
+}

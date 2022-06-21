@@ -41,9 +41,17 @@ Page({
   },
   async onSearch(textSearch) {
     this.setData({ isLoading: true });
-    const { products } = this.data;
+    const { products,selectedSort } = this.data;
     if (textSearch) {
+      let orderby = selectedSort.value;
+      let order = "desc";
+      if (selectedSort.value.includes("price")) {
+        order = selectedSort.value.split("/")[1];
+        orderby = "price";
+      }
       const data = await productApis.getProductsArchives({
+        order,
+        orderby,
         search: textSearch,
         page: 1,
       });
