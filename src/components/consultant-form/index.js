@@ -1,3 +1,5 @@
+import { serviceApis } from "../../services/apis";
+import get from 'lodash/get';
 Component({
   props: {
     className: "",
@@ -12,9 +14,19 @@ Component({
       phone_number: "",
       service_name: [],
     },
+    serviceOptions:[],
     isValid: false,
   },
+  didMount(){
+    this.loadOption();
+  },
   methods: {
+    async loadOption(){
+      const res = await serviceApis.getConsultantOptions();
+      this.setData({
+        serviceOptions:get(res,'data.options',[]),
+      })
+    },
     _onSubmit() {
       const { full_name, phone_number, service_name } = this.data;
       const payload = { full_name, phone_number, service_name };

@@ -1,6 +1,6 @@
 import { parseQuery } from "../../utils/navigate";
-import dummyData from "./dummyData";
 import { serviceApis } from "../../services/apis";
+import {getContent} from '../../utils/common';
 Page({
   data: {
     isLoading: false,
@@ -16,7 +16,7 @@ Page({
       this.setData({
         service: {
           content: serviceData.content.rendered
-            ? serviceData.content.rendered.replace(/<\/?[^>]+(>|$)/g, "")
+            ? getContent(serviceData.content.rendered)
             : "",
           images: images.map((i) => ({ src: i })),
           title: serviceData.title.rendered,

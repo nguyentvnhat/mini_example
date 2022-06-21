@@ -128,3 +128,7 @@ text {
   display: flex;
   align-items: center;
 }
+
+.size-large{
+ width: 100vw; 
+}
