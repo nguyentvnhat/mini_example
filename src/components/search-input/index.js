@@ -5,6 +5,7 @@ Component({
 	},
 	props:{
 		className:'',
+		placeholder:'',
 	},
   methods: {
     onInput(event) {

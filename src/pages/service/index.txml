@@ -1,5 +1,5 @@
 <view class="page service-page container">
-	<search-input onDebounce="onSearch" className="search_input" />
+	<search-input onDebounce="onSearch" className="search_input"  placeholder="Tên dịch vụ" />
 	<block tiki:if="{{isLoading}}">
 		<service isLoading className="service-item" tiki:for="{{skeletons}}" />
 	</block>

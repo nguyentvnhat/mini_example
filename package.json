@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "tiki": {
     "appIdentifier": "vn.uway.miniapp.gaspa",
-    "buildNumber": 4
+    "buildNumber": 5
   },
   "dependencies": {
     "@tiki.vn/mini-html-parser2": "^0.0.4",
