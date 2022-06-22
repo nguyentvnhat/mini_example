@@ -7,8 +7,8 @@
 <view class="wrap-button-collapse">
     <button class="button-collapse" type="ghost" size="small" onTap="onToggleDesc">
         {{isCollapsedDesc?'rút gọn':'xem thêm'}}
-        <image tiki:if="{{isCollapsedDesc}}" src="/assets/icons/arow-up-blue.svg" class="icon" />
-        <image tiki:else src="/assets/icons/arrow-down-blue.svg" class="icon" />
+        <image src="{{isCollapsedDesc?'/assets/icons/arrow-up-blue.svg':'/assets/icons/arrow-down-blue.svg'}}"
+            class="icon" />
     </button>
 
 </view>
