@@ -45,4 +45,20 @@ Page({
       },
     });
   },
+  async onSearch(textSearch){
+    this.setData({ isLoading: true });
+    const res = await serviceApis.getServiceArchives(textSearch);
+    if (res.success) {
+      this.setData({
+        services: {
+          data: this.mappingServiceData(res.data),
+        },
+        isLoading: false,
+      });
+    } else {
+      this.setData({
+        isLoading: false,
+      });
+    }
+  }
 });

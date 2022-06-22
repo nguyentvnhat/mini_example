@@ -4,3 +4,6 @@
 .service-item{
     margin-bottom: 16px;
 }
+.search_input{
+    margin-bottom: 16px
+}
