@@ -1,8 +1,9 @@
 import request from "../index";
 import dummyData from "../../pages/service/dummyData";
-export const getServiceArchives = async () => {
+export const getServiceArchives = async (search_name) => {
   const res = await request({
     path: "/get-service-archives",
+    params:{search_name}
   });
   return res;
 };

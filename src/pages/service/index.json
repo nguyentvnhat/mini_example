@@ -1,6 +1,7 @@
 {
   "defaultTitle": "Danh sách dịch vụ",
   "usingComponents": {
-    "service": "components/service/index"
+    "service": "components/service/index",
+    "search-input": "components/search-input/index"
   }
 }

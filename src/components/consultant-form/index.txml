@@ -4,14 +4,14 @@
 			<view class="box-ico solid" style="margin-right: 12px;">
 				<icon type="support" size="16" color="#0B74E5" />
 			</view>
-			<text class="title">Form đăng ký</text>
+			<text class="title">Đăng ký Soi da & Tư vấn</text>
 		</view>
 		<view class="box-ico px-0">
 			<icon type="arrow_{{isCollapsed?'up':'down'}}" color="#808080" />
 		</view>
 	</view>
 
-	<view  class="form-submit {{isCollapsed?'collapsed':''}}">
+	<form  class="form-submit {{isCollapsed?'collapsed':''}}">
 		<view class="form-group">
 			<text class="form-label">Họ và tên</text>
 			<view class="form-controls">
@@ -33,14 +33,14 @@
 			<text class="form-label">Dịch vụ cần tư vấn</text>
 			<checkbox-group class="form-controls" name="service_name" onChange="onChangeCheckBox">
 				<view class="flex-box-center form-control checkbox" tiki:for="{{serviceOptions}}" tiki:key="index">
-					<checkbox class="mr-1" value="{{item.step_name_progress_tiniapp}}" />
+					<checkbox class="mr-1" value="{{item.step_desc_progress_tiniapp}}" />
 					<text>{{item.step_desc_progress_tiniapp}}</text>
 				</view>
 				<text class="text-error">{{errors['service_name']}}</text>
 			</checkbox-group>
 		</view>
 		<view class="form-group">
-			<button type="solid" size="large" class="form-control button text-medium" disabled="{{!isValid}}" onTap="_onSubmit" >Nhận tư vấn</button>
+			<button formType="reset" type="solid" size="large" class="form-control button text-medium" disabled="{{!isValid}}" onTap="_onSubmit" >Nhận tư vấn</button>
 		</view>
-	</view>
+	</form>
 </view>
