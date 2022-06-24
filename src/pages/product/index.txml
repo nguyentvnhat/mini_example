@@ -1,5 +1,5 @@
 <view class="page product-page container">
-  <search-input onDebounce="onSearch" className="search_input" />
+  <search-input onDebounce="onSearch" className="search_input" placeholder="Tên sản phẩm" />
   <view class="actions">
     <sort
       sorts="{{sorts}}"

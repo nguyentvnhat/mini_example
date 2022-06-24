@@ -7,7 +7,7 @@
 <view class="wrap-button-collapse">
     <button class="button-collapse" type="ghost" size="small" onTap="onToggleDesc">
         {{isCollapsedDesc?'rút gọn':'xem thêm'}}
-        <image src="{{isCollapsedDesc?'/assets/icons/arow-up-blue.svg':'/assets/icons/arrow-down-blue.svg'}}"
+        <image src="{{isCollapsedDesc?'/assets/icons/arrow-up-blue.svg':'/assets/icons/arrow-down-blue.svg'}}"
             class="icon" />
     </button>
 
