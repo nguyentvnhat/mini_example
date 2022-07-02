@@ -2,7 +2,7 @@ import { productApis } from "../../services/apis";
 import parse from "@tiki.vn/mini-html-parser2";
 import { parseQuery } from "../../utils/navigate";
 import { navigate } from "../../utils/navigate";
-
+import {decode} from 'html-entities';
 Page({
   data: {
     isLoading: false,
@@ -26,7 +26,7 @@ Page({
     });
     const product = await productApis.getProductDetail(id);
     const listSimilar = await productApis.getListSimilarWithProductId(id);
-    parse(product.description, (err, htmlNodes) => {
+    parse(decode(product.description ? product.description : ''), (err, htmlNodes) => {
       if (!err) {
         this.setData({
           htmlNodes,
