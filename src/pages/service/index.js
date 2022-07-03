@@ -1,5 +1,6 @@
 import { navigate } from "../../utils/navigate";
 import { serviceApis } from "../../services/apis";
+import {decode} from 'html-entities';
 Page({
   data: {
     isLoading: true,
@@ -13,8 +14,8 @@ Page({
     return data.map(service=>({
       id: service.ID,
       image: service.feature_image,
-      name: service.post_title,
-      desc:service.post_content,
+      name: decode(service.post_title),
+      desc:decode(service.post_content),
     }))
   },
   async loadData() {

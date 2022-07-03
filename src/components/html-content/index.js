@@ -1,4 +1,5 @@
 import parse from "@tiki.vn/mini-html-parser2";
+import {decode} from'html-entities';
 Component({
   props: {
     className:'',
@@ -17,7 +18,8 @@ Component({
   },
   methods: {
     parseHTMLFromProps(content) {
-      parse(content, (err, htmlNodes) => {
+      if(!content) return;
+      parse(decode(content), (err, htmlNodes) => {
         if (!err) {
           this.setData({
             htmlNodes,

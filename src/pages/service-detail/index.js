@@ -1,6 +1,8 @@
 import { parseQuery } from "../../utils/navigate";
 import { serviceApis } from "../../services/apis";
 import {getContent} from '../../utils/common';
+import {decode} from 'html-entities';
+
 Page({
   data: {
     isLoading: false,
@@ -19,7 +21,7 @@ Page({
             ? getContent(serviceData.content.rendered)
             : "",
           images: images.map((i) => ({ src: i })),
-          title: serviceData.title.rendered,
+          title: decode(serviceData.title.rendered),
         },
         isLoading: false,
       });
