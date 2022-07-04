@@ -1,9 +1,9 @@
 {
   "name": "uway-gaspa",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "tiki": {
     "appIdentifier": "vn.uway.miniapp.gaspa",
-    "buildNumber": 8
+    "buildNumber": 1
   },
   "dependencies": {
     "@tiki.vn/mini-html-parser2": "^0.0.4",
