@@ -1,6 +1,6 @@
 .description {
     overflow-y: hidden;
-    height: 60vw;
+    height: 80vw;
 }
 .description.collapsed{
     height: auto;
