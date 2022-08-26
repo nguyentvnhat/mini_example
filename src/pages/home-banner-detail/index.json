@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "Chi tiết",
+  "usingComponents": {
+    "carousel-service": "components/carousel/index",
+    "html-content": "components/html-content/index",
+    "consultant-form":"components/consultant-form/index"
+  }
+}

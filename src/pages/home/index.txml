@@ -1,0 +1,29 @@
+<template name="carousel-loading">
+  <carousel class="carousel_list" indicator-dots spacing="{{8}}">
+    <slider-item tiki:for="{{3}}" isLoading />
+  </carousel>
+</template>
+<template name="carousel-completed">
+  <carousel class="carousel_list" indicator-dots spacing="{{8}}">
+    <slider-item tiki:for="{{sliders}}" item="{{item}}" onTap="onTabService" />
+  </carousel>
+</template>
+
+<view class="page service-detail mt-0">
+  <template is="carousel-{{isLoadingCarousel?'loading':'completed'}}" data="{{sliders}}" />
+  <view class="container">
+    <text number-of-lines="2" class="text-name">
+      Giới thiệu về Gà Spa
+    </text>
+    <block tiki:if="{{isLoadingContent}}">
+      <view class="skeleton w-full text_content" />
+      <view class="skeleton w-full text_content w30" />
+      <view class="skeleton w-full text_content w50" />
+      <view class="skeleton w-full text_content w30" />
+      <view class="skeleton w-full text_content w90" />
+    </block>
+    <block tiki:else>
+      <html-content content="{{content}}" />
+    </block>
+  </view>
+</view>
