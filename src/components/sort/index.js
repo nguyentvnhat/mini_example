@@ -13,8 +13,6 @@ Component({
   methods: {
     showBottomSheet() {
       my.hideTabBar();
-
-      my.hideKeyboard();
       this.setData({
         isShow: true,
       });

@@ -4,7 +4,7 @@
     <text class="label">{{node}}</text>
   </view>
   <view>
-    <text class="box-text-title">{{step.step_desc_progress_tiniapp}}</text>
+    <text class="box-text-title">{{step.step_name_progress_tiniapp}}</text>
     <text class="box-text-desc">{{step.step_desc_progress_tiniapp}}</text>
   </view>
 </view>

@@ -30,8 +30,8 @@ Component({
     _onSubmit() {
       const { full_name, phone_number, service_name } = this.data;
       const payload = { full_name, phone_number, service_name };
-	  this.close();
-	  this.props.onSubmit(payload);
+      this.props.onSubmit(payload);
+      this.close();
     },
     onChangeName(e) {
       const errors = this.data.errors;
@@ -79,6 +79,15 @@ Component({
     close() {
       this.setData({
         isCollapsed: false,
+        full_name: "",
+        phone_number: "",
+        service_name: [],
+        errors: {
+          full_name: "",
+          phone_number: "",
+          service_name: [],
+        },
+        isValid: false,
       });
     },
     handleCollapsed() {
