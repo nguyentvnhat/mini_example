@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "Gà Spa",
+  "usingComponents": {
+    "html-content": "components/html-content/index",
+    "slider-item": "components/slider-item/index"
+  }
+}

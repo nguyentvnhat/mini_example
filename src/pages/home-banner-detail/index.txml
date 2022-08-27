@@ -1,0 +1,9 @@
+<view class="page service-detail mt-0">
+	<view class="service-detail-body" onTouchStart="onTapOutSiteForm" >
+		<carousel-service isLoading="{{isLoading}}" list="{{service.images}}" />
+		<view class="boxViewItem container">
+			<text class="text-title">{{service.title}}</text>
+			<html-content isLoading="{{isLoading}}" content="{{service.content}}" />
+		</view>
+	</view>
+</view>

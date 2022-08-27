@@ -4,7 +4,9 @@
     "pages/service/index",
     "pages/product-detail/index",
     "pages/service-detail/index",
-    "pages/process/index"
+    "pages/process/index",
+    "pages/home/index",
+    "pages/home-banner-detail/index"
   ],
   "window": {
     "defaultTitle": "",
@@ -15,6 +17,12 @@
     "selectedColor": "#0B74E5",
     "borderTopColor": "#EBEBF0",
     "items": [
+      {
+        "name": "Trang chủ",
+        "pagePath": "pages/home/index",
+        "icon": "/assets/icons/tab-home.png",
+        "activeIcon": "assets/icons/tab-home-active.png"
+      },
       {
         "name": "Dịch vụ",
         "pagePath": "pages/service/index",
