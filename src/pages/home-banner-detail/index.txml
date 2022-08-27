@@ -6,5 +6,4 @@
 			<html-content isLoading="{{isLoading}}" content="{{service.content}}" />
 		</view>
 	</view>
-	<consultant-form ref="saveRef" className="consultant-form" onSubmit="onSubmit" />
 </view>
